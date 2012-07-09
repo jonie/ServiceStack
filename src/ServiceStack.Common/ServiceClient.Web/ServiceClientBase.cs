@@ -733,7 +733,7 @@ namespace ServiceStack.ServiceClient.Web
 
                 var queryString = QueryStringSerializer.SerializeToString(request);
 #if !MONOTOUCH
-                var nameValueCollection = HttpUtility.ParseQueryString(queryString);
+                var nameValueCollection = ServiceStack.Net30.HttpUtility.ParseQueryString(queryString);
 #endif
                 var boundary = DateTime.Now.Ticks.ToString();
                 webRequest.ContentType = "multipart/form-data; boundary=" + boundary;
